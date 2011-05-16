@@ -9,7 +9,7 @@ function Presentation(slides) {
 
 Presentation.prototype.add = function(slide) { this.slides.push(slide); }
 Presentation.prototype.show = function() { this.slides[this.index].show(); }
-Presentation.prototype.next = function() {
+Presentation.prototype.f = function() {
     if (this.index === this.slides.length-1) {
         console.log(color("At the end.", "red+bold"))
         return;
@@ -17,7 +17,7 @@ Presentation.prototype.next = function() {
     this.index += 1;
     this.show();
 }
-Presentation.prototype.back = function() {
+Presentation.prototype.b = function() {
     if (this.index === 0) {
         console.log(color("At the beginning", "red+bold"));
         return;
