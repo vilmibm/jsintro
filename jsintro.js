@@ -102,7 +102,7 @@ pres.add(new Slide(
         '* in the browser it\'s \'window\'',
         '* less-defined nonbrowser',
         '* no block level scope. function level, instead',
-        "\t----> this makes for powerful closures"
+        "\t-> this makes for powerful closures"
     ]
 ));
 pres.add(new Slide(
@@ -146,8 +146,9 @@ pres.add(new Slide(
 pres.add(new Slide(
     'Tools', [
         '* Chrom{e,ium} dev console AKA webkit console',
-        '* nodejs',
         '* v8, spidermonkey',
+            '\t-> nodejs',
+                '\t\t-> jsdom',
         '* js beautifier'
     ]
 ));
