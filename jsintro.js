@@ -47,9 +47,6 @@ Slide.prototype.show = function() {
     }
 }
 
-Presentation = Presentation;
-Slide = Slide;
-
 var pres = new Presentation();
 
 pres.add(new Slide(
@@ -174,20 +171,3 @@ pres.add(new Slide(
 
 
 repl.start(prompt='> ').context.p = pres;
-
-// JS L&L May 2011
-// 1. brief history
-// 2. dom vs. jquery vs. js
-// 3. objects
-// 6. prototypes
-    // incl. monkey patching
-// 4. scope
-    // this, var, globals
-// 5. first class functions
-// 6. flow control
-    // for, for in, exceptions
-// 7. regex support
-// 8. tools
-// 9. documentation
-// 10. further reading
-
