@@ -9,6 +9,7 @@ function Presentation(slides) {
 
 Presentation.prototype.add = function(slide) { this.slides.push(slide); }
 Presentation.prototype.show = function() { this.slides[this.index].show(); }
+// advance to next slide and show it
 Presentation.prototype.f = function() {
     if (this.index === this.slides.length-1) {
         console.log(color("At the end.", "red+bold"))
@@ -17,7 +18,8 @@ Presentation.prototype.f = function() {
     this.index += 1;
     this.show();
 }
-Presentation.prototype.b = function() {
+// rewind to previous slide and show it
+Presentation.prototype.r = function() {
     if (this.index === 0) {
         console.log(color("At the beginning", "red+bold"));
         return;
@@ -25,9 +27,7 @@ Presentation.prototype.b = function() {
     this.index -= 1;
     this.show();
 };
-Presentation.prototype.first = function() {
-    this.index = 0;
-}
+Presentation.prototype.first = function() { this.index = 0; }
 
 
 function Slide(title, content) {
@@ -62,11 +62,18 @@ pres.add(new Slide(
     ]
 ));
 pres.add(new Slide(
+    'Lineage', [
+        '* has \'java\' in the name purely for marketing purposes',
+        '* based on Self and Scheme',
+        '* don\'t try to use it like C++'
+    ]
+));
+pres.add(new Slide(
     'What sucks, exactly?', [
         'Could be any of:',
-        'the DOM',
-        'javascript',
-        'jquery'
+        '\t* the DOM',
+        '\t* javascript',
+        '\t* jquery'
     ]
 ));
 pres.add(new Slide(
@@ -78,8 +85,10 @@ pres.add(new Slide(
     'strings, numbers, objects'
 ));
 pres.add(new Slide(
-    'Objects',
-    'Everything is an object, despite what typeof says.'
+    'Objects', [
+        '* everything is an object, despite what typeof says.',
+        '* objects can be created literally or via the \'new\' keyword'
+    ]
 ));
 pres.add(new Slide(
     'Prototypes', [
@@ -165,6 +174,8 @@ pres.add(new Slide(
     'Further Reading',[
         '* pretty much anything by Douglas Crockford',
         '* Node.js source code',
+        '* stackoverflow',
+        '\t* http://stackoverflow.com/questions/tagged/javascript',
         '* github'
     ]
 ));
